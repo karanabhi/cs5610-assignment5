@@ -2,7 +2,7 @@ defmodule MemoryWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-   channel "games:*", Memory.GamesChannel
+   channel "game:*", MemoryWeb.GameChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
@@ -23,9 +23,9 @@ defmodule MemoryWeb.UserSocket do
     {:ok, socket}
   end
 
-  def connect(%{"gameName" =>gameName}, socket) do
-    {:ok, assign(socket, :gameName,gameName)}
-  end
+  #def connect(%{"gameName" =>gameName}, socket) do
+  #  {:ok, assign(socket, :gameName,gameName)}
+  #end
 
   # Socket id's are topics that allow you to identify all sockets for a given user:
   #

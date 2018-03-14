@@ -44,7 +44,6 @@ function Side(params) {
       <div id="side-0" className="side col">
         &nbsp;
       </div>
-    );
+);
   }
 }
-

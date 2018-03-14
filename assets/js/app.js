@@ -18,32 +18,20 @@ import "phoenix_html";
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 
-import socket from "./socket"
+//import socket from "./socket"
 
-function form_init(){
-  //alert("hello11");
- let channel=socket.channel("games:memory",{});
-  channel.join()
-  .receive("ok",resp=>{console.log("Joined Successfully",resp)})
-  .receive("error",resp=>{console.log("Undable to Join",resp)});
-
-  $("#game-button").click(()=>{
-    let gameName=$("#_gameName").val();
-    channel.push("gName",{gameName:gameName})
-    .receive("ok",msg=>{
-      $("#game-output").text(msg.message);
-    });
-  });
-}//form_init() ends
-
-import render_game from "./game"
+import game_form from "./startgame";
+import start_game from "./memorygame";
 
 function init() {
-  if(document.getElementById('boardMainDiv')){
-    render_game();
+  let game = document.getElementById('game');
+  let startGame = document.getElementById('start_game');
+  if (startGame) {
+    game_form(startGame);
   }
-  if(document.getElementById('_gameName')){
-    form_init();
+
+  if (game) {
+      start_game(game, window.gameName);
   }
 }
 

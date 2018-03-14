@@ -1,5 +1,8 @@
-<h1>Memory Game</h1>
-<div id="boardMainDiv"></div>
-<div id="scoreMainDiv"></div>
-<div id="clickMainDiv"></div>
-<p class="col-md-2 col-md-offset-2" id="resetBtnMainPara"></p>
+<script>
+    window.gameName = "<%= @game %>";
+</script>
+<p><h1 style="text-align:center;">Memory Game</h1></p>
+<p class="text-center">{ <%= @game %> }</p>
+<div id="game">
+  TODO...
+</div>
