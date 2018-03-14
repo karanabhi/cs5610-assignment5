@@ -1,8 +1,8 @@
-<h1>Memory Game</h1>
-
-<div id="game">
-  Loading...
+<div class="row">
+  <div class="col">
+    <h1>Join a Game</h1>
+    <p><input type="text" id="_gameName" class="form-control"/></p>
+    <p><button id="game-button" class="btn btn-success center-block">Join</button></p>
+    <p id="game-output"></p>
+  </div>
 </div>
-
-
-
